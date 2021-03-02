@@ -1,0 +1,18 @@
+{
+  "Bookcovers": [
+    {
+      "title": "Visions of Cody",
+      "image": {
+        "alt": "Cover Illustration for Visions of Cody",
+        "src": "../images/cody.jpg"
+      }
+    },
+    {
+      "title": "East of Eden",
+      "image": {
+        "alt": "Cover Illustration for Visions of Cody",
+        "src": "../images/eden.jpg"
+      }
+    }
+  ]
+}
