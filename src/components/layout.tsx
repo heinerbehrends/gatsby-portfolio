@@ -1,3 +1,6 @@
+/** @jsx jsx */
+/** @jsxFrag React.Fragment */
+import { jsx } from "theme-ui"
 import React, { ReactNode } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
@@ -25,10 +28,10 @@ const Layout = ({ children }: LayoutProps) => {
         style={{
           margin: `0 auto`,
           maxWidth: 960,
-          padding: `0 1.0875rem 1.45rem`,
+          padding: `0`,
         }}
       >
-        <main>{children}</main>
+        <main sx={{ marginTop: "64px" }}>{children}</main>
         <footer
           style={{
             marginTop: `2rem`,

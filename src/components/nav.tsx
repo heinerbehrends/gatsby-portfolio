@@ -21,9 +21,9 @@ export default function Nav() {
           margin: "0",
         }}
       >
-        <TopBarNavItem text="about" location="/about/" />
-        <TopBarNavItem text="contact" location="/contact/" />
-        <TopBarNavItem text="home" location="/" />
+        <TopBarNavItem location="/about/">about</TopBarNavItem>
+        <TopBarNavItem location="/contact/">contact</TopBarNavItem>
+        <TopBarNavItem location="/">ontwerpen</TopBarNavItem>
       </nav>
     </div>
   )

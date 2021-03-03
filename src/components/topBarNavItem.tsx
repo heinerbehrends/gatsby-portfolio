@@ -3,18 +3,22 @@ import { jsx } from "theme-ui"
 import { Link } from "gatsby"
 
 type TopBarNavItemProps = {
-  text: string
+  children: string
   location: string
   variant?: "active"
 }
 
-export default function TopBarNavItem({ text, location }: TopBarNavItemProps) {
+export default function TopBarNavItem({
+  children,
+  location,
+}: TopBarNavItemProps) {
   return (
     <Link
       activeStyle={{
         fontWeight: "500",
         color: "#333",
       }}
+      partiallyActive={true}
       sx={{
         textDecoration: "none",
         color: "#888",
@@ -37,7 +41,7 @@ export default function TopBarNavItem({ text, location }: TopBarNavItemProps) {
           paddingX: ["2", "2", "3"],
         }}
       >
-        {text}
+        {children}
       </div>
     </Link>
   )
