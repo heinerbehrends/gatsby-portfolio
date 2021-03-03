@@ -28,20 +28,36 @@ function BookCover({ data }: BookCoverProps) {
   const { contentJson: bookCover } = data
   return (
     <Layout>
-      <h2 sx={{ textAlign: "center", paddingY: 4, marginY: 0, fontSize: 5 }}>
-        {bookCover.title}
-      </h2>
-      <div sx={{ display: "flex", paddingX: 0 }}>
+      <div
+        sx={{
+          display: "grid",
+          gap: 4,
+          gridTemplateColumns: "1fr 1fr",
+          paddingX: 0,
+          paddingBottom: 3,
+        }}
+      >
         <GatsbyImage
-          imgStyle={{ flex: 1 }}
           image={bookCover.image.src.childImageSharp.gatsbyImageData}
           alt={bookCover.image.alt}
         />
-        <p sx={{ flex: 1, marginTop: 0, paddingLeft: 4 }}>
-          <div sx={{ whiteSpace: "pre-wrap", fontSize: 3, lineHeight: "body" }}>
+        <div sx={{ marginTop: 0 }}>
+          <h2
+            sx={{ textAlign: "center", paddingY: 4, marginY: 0, fontSize: 5 }}
+          >
+            {bookCover.title}
+          </h2>
+          <p
+            sx={{
+              whiteSpace: "pre-wrap",
+              fontSize: 3,
+              lineHeight: "body",
+              margin: 0,
+            }}
+          >
             {bookCover.description}
-          </div>
-        </p>
+          </p>
+        </div>
       </div>
       <CoverGrid />
     </Layout>

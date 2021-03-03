@@ -1,7 +1,19 @@
 // @ts-nocheck
-const slugify = require("slugify")
 const path = require("path")
-const { pathToFileURL } = require("url")
+const slugify = require("slugify")
+
+exports.onCreateNode = ({ node, actions }) => {
+  const { createNodeField } = actions
+  if (node.internal.type === "ContentJson") {
+    const slug = `books/${slugify(node.title, { lower: true })}`
+    console.log(slug)
+    createNodeField({
+      node,
+      name: `slug`,
+      value: slug,
+    })
+  }
+}
 
 exports.createPages = async ({ graphql, actions, reporter }) => {
   const { createPage } = actions
@@ -32,7 +44,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
     return
   }
   const nodes = result.data.allContentJson.edges
-  console.log(nodes)
+
   nodes.forEach(({ node }) => {
     createPage({
       path: `books/${slugify(node.title, { lower: true })}`,
