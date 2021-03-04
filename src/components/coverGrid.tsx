@@ -56,7 +56,6 @@ export default function CoverGrid() {
         ],
         gap: "15px",
         alignItems: "center",
-        paddingTop: 3,
       }}
     >
       {nodes.map(({ node }: CoverGridData) => (

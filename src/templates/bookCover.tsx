@@ -31,19 +31,26 @@ function BookCover({ data }: BookCoverProps) {
       <div
         sx={{
           display: "grid",
-          gap: 4,
+          gap: 3,
           gridTemplateColumns: "1fr 1fr",
           paddingX: 0,
-          paddingBottom: 3,
+          paddingBottom: 0,
         }}
       >
         <GatsbyImage
           image={bookCover.image.src.childImageSharp.gatsbyImageData}
           alt={bookCover.image.alt}
+          loading={"eager"}
         />
         <div sx={{ marginTop: 0 }}>
           <h2
-            sx={{ textAlign: "center", paddingY: 4, marginY: 0, fontSize: 5 }}
+            sx={{
+              textAlign: "center",
+              paddingTop: 2,
+              paddingBottom: 3,
+              marginY: 0,
+              fontSize: 5,
+            }}
           >
             {bookCover.title}
           </h2>
@@ -53,12 +60,23 @@ function BookCover({ data }: BookCoverProps) {
               fontSize: 3,
               lineHeight: "body",
               margin: 0,
+              paddingX: 4,
             }}
           >
             {bookCover.description}
           </p>
         </div>
       </div>
+      <h3
+        sx={{
+          paddingY: 3,
+          textAlign: "center",
+          fontSize: 4,
+          fontWeight: "body",
+        }}
+      >
+        Ontdek meer
+      </h3>
       <CoverGrid />
     </Layout>
   )

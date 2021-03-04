@@ -1,0 +1,8 @@
+{
+  "title": "Ghosts",
+  "description": "Aliquam ac ex sem. Pellentesque consequat vitae massa eu auctor. Nunc venenatis vel felis et ultrices. Mauris vulputate efficitur imperdiet. Nulla eu eros non turpis facilisis maximus quis a tortor. Proin quam purus, vulputate quis viverra aliquet, scelerisque egestas augue. Proin vulputate nisi tellus, non convallis mauris suscipit ultrices. Cras venenatis lectus erat, vitae placerat lacus laoreet id. Sed tincidunt dolor tristique nisi aliquet molestie. Etiam enim massa, pellentesque at venenatis nec, suscipit at diam. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut quis vehicula metus, et dignissim tellus. Fusce tristique lacus risus, sit amet vulputate lacus volutpat nec. Duis nec maximus mauris, a placerat ante. Aliquam pulvinar lectus sem, eget dictum augue gravida a.",
+  "image": {
+    "alt": "Cover Illustration for Ghosts",
+    "src": "../images/ghosts.webp"
+  }
+}

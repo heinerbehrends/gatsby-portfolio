@@ -1,40 +1,8 @@
 {
-  "name": "portfolio-site",
+  "name": "gatsby-starter-hello-world",
   "private": true,
-  "description": "A simple portfolio site",
+  "description": "A simplified bare-bones starter for Gatsby",
   "version": "0.1.0",
-  "author": "Heiner Behrends",
-  "dependencies": {
-    "@types/react-helmet": "^6.1.0",
-    "@types/theme-ui": "^0.3.7",
-    "gatsby": "^3.0.0",
-    "gatsby-plugin-gatsby-cloud": "^2.0.0",
-    "gatsby-plugin-image": "^1.0.0",
-    "gatsby-plugin-manifest": "^3.0.0",
-    "gatsby-plugin-offline": "^4.0.0",
-    "gatsby-plugin-react-helmet": "^4.0.0",
-    "gatsby-plugin-sharp": "^3.0.0",
-    "gatsby-plugin-theme-ui": "^0.3.5",
-    "gatsby-source-filesystem": "^3.0.0",
-    "gatsby-transformer-json": "^3.0.0",
-    "gatsby-transformer-sharp": "^3.0.0",
-    "prop-types": "^15.7.2",
-    "react": "^17.0.1",
-    "react-dom": "^17.0.1",
-    "react-helmet": "^6.1.0",
-    "slugify": "^1.4.7",
-    "theme-ui": "^0.3.5",
-    "typescript": "^4.2.2"
-  },
-  "devDependencies": {
-    "@types/node": "^14.14.31",
-    "@types/react": "^17.0.2",
-    "@types/react-dom": "^17.0.1",
-    "prettier": "2.2.1"
-  },
-  "keywords": [
-    "gatsby"
-  ],
   "license": "0BSD",
   "scripts": {
     "build": "gatsby build",
@@ -45,9 +13,28 @@
     "clean": "gatsby clean",
     "test": "echo \"Write tests! -> https://gatsby.dev/unit-testing\" && exit 1"
   },
+  "dependencies": {
+    "gatsby": "^3.0.1",
+    "gatsby-plugin-image": "^1.0.0",
+    "gatsby-plugin-netlify-cms": "^5.0.0",
+    "gatsby-plugin-react-helmet": "^4.0.0",
+    "gatsby-plugin-sharp": "^3.0.0",
+    "gatsby-plugin-theme-ui": "^0.3.5",
+    "gatsby-source-filesystem": "^3.0.0",
+    "gatsby-transformer-json": "^3.0.0",
+    "gatsby-transformer-sharp": "^3.0.0",
+    "netlify-cms-app": "^2.14.26",
+    "react": "^17.0.1",
+    "react-dom": "^17.0.1",
+    "react-helmet": "^6.1.0",
+    "theme-ui": "^0.3.5"
+  },
+  "devDependencies": {
+    "prettier": "2.2.1"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/gatsbyjs/gatsby-starter-default"
+    "url": "https://github.com/gatsbyjs/gatsby-starter-hello-world"
   },
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"

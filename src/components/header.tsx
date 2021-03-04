@@ -17,7 +17,7 @@ export default function Header() {
         top: "0",
         width: "100%",
         paddingX: ["2", "3"],
-        marginBottom: "4",
+        paddingY: "4",
         height: "64px",
         borderBottom: "1px solid",
         borderColor: "accent",

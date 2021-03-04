@@ -5,6 +5,7 @@ import React, { ReactNode } from "react"
 import PropTypes from "prop-types"
 import { useStaticQuery, graphql } from "gatsby"
 import Header from "./header"
+import "./layout.css"
 
 type LayoutProps = {
   children: ReactNode
@@ -25,10 +26,11 @@ const Layout = ({ children }: LayoutProps) => {
     <>
       <Header />
       <div
-        style={{
+        sx={{
           margin: `0 auto`,
           maxWidth: 960,
-          padding: `0`,
+          paddingX: 3,
+          paddingTop: 3,
         }}
       >
         <main sx={{ marginTop: "64px" }}>{children}</main>
