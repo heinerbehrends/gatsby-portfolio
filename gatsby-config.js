@@ -1,4 +1,9 @@
 module.exports = {
+  siteMetadata: {
+    title: `Jop Luberti portfolio pagina`,
+    description: `Grafisch ontwerp voor boekomslagen.`,
+    author: `Heiner Behrends`,
+  },
   plugins: [
     "gatsby-plugin-netlify-cms",
     "gatsby-plugin-theme-ui",

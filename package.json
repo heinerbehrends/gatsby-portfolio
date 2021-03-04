@@ -15,6 +15,7 @@
   },
   "dependencies": {
     "@types/react-helmet": "^6.1.0",
+    "@types/theme-ui": "^0.3.7",
     "gatsby": "^3.0.1",
     "gatsby-plugin-image": "^1.0.0",
     "gatsby-plugin-netlify-cms": "^5.0.0",
