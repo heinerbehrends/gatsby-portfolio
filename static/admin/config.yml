@@ -19,5 +19,5 @@ collections:
         name: image
         widget: object
         fields:
-          - { label: Image, name: image, widget: image }
+          - { label: Image, name: src, widget: image }
           - { label: Alt, name: alt, widget: string }
