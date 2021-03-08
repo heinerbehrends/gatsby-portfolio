@@ -10,6 +10,7 @@ collections:
   - label: Books
     name: books
     folder: src/content
+    extension: json
     create: true
     fields:
       - { label: Title, name: title, widget: string }
@@ -18,4 +19,5 @@ collections:
         name: image
         widget: object
         fields:
+          - { label: Image, name: image, widget: image }
           - { label: Alt, name: alt, widget: string }
