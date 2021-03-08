@@ -1,9 +1,10 @@
 backend:
-  name: git-gateway
+  name: github
   repo: heinerbehrends/gatsby-portfolio
   branch: main
 
 media_folder: src/images
+public_folder: /images
 
 collections:
   - label: Books
