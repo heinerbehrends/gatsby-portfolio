@@ -1,7 +1,7 @@
 backend:
   name: git-gateway
   repo: heinerbehrends/gatsby-portfolio
-  branch: master
+  branch: main
 
 media_folder: src/images
 
