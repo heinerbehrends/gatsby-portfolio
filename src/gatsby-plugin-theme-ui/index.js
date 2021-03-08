@@ -1,7 +1,7 @@
 const theme = {
   colors: {
-    text: "#333",
-    background: "#fff",
+    text: "#555",
+    background: "rgba(217,217,217,.3)",
     primary: "#fff",
     secondary: "#333",
   },
@@ -22,6 +22,11 @@ const theme = {
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
   breakpoints: ["420px", "576px", "800px"],
+  shadows: {
+    big: "2px 2px 4px rgba(0, 0, 0, 0.1)",
+    focus: "inset 0 0 3px 3px #FFC0E2",
+    text: "5px 5px 5px rgba(0, 0, 0, 0.2)",
+  },
 }
 
 export default theme

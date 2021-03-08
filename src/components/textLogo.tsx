@@ -29,7 +29,7 @@ export default function TextLogo() {
           sx={{
             color: "#333",
             fontWeight: "thin",
-            fontSize: ["5", "5", "40px"],
+            fontSize: ["5", "5", "36px"],
             margin: "1",
           }}
         >

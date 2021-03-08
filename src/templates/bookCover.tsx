@@ -32,7 +32,7 @@ function BookCover({ data }: BookCoverProps) {
         sx={{
           display: "grid",
           gap: 3,
-          gridTemplateColumns: "1fr 1fr",
+          gridTemplateColumns: "3fr 2fr",
           paddingX: 0,
           paddingBottom: 0,
         }}

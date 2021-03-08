@@ -10,7 +10,7 @@ export default function Header() {
       sx={{
         display: "flex",
         maxWidth: "100vw",
-        backgroundColor: "primary",
+        backgroundColor: "#fffbfb",
         boxShadow: "big",
         position: "fixed",
         zIndex: "2",
@@ -19,7 +19,7 @@ export default function Header() {
         paddingX: ["2", "3"],
         paddingY: "4",
         height: "64px",
-        borderBottom: "1px solid",
+        // borderBottom: "1px solid",
         borderColor: "accent",
       }}
     >
