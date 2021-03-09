@@ -3,8 +3,8 @@ backend:
   repo: heinerbehrends/gatsby-portfolio
   branch: main
 
-media_folder: src/images
-public_folder: /../images
+media_folder: static/images
+public_folder: /images
 
 collections:
   - label: Books
