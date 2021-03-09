@@ -7,13 +7,27 @@ media_folder: static/images
 public_folder: /images
 
 collections:
-  - label: Books
+  - label: Book
     name: books
     folder: src/content
     create: true
     fields:
       - { label: Title, name: title, widget: string }
       - { label: Description, name: description, widget: text }
+      - { label: Meta, name: meta, widget: object, required: false, fields: 
+        - {
+            label: Open Graph description,
+            name: ogDescription,
+            widget: text,
+            pattern: [".{12, 110}", "Must be between 12 and 115 characters long."],
+          }
+        - {
+            label: Open Graph image,
+            name: ogImage,
+            widget: image,
+        }
+        }
+      
       - label: Image
         name: image
         widget: object

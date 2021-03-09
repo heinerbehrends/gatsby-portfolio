@@ -26,6 +26,25 @@ type BookCoverProps = {
   }
 }
 
+export const query = graphql`
+  query($id: String!) {
+    markdownRemark(id: { eq: $id }) {
+      frontmatter {
+        title
+        description
+        image {
+          alt
+          src {
+            childImageSharp {
+              gatsbyImageData(placeholder: BLURRED, width: 480)
+            }
+          }
+        }
+      }
+    }
+  }
+`
+
 function BookCover({ data }: BookCoverProps) {
   const { markdownRemark: bookCover } = data
   return (
@@ -46,10 +65,9 @@ function BookCover({ data }: BookCoverProps) {
           alt={bookCover.frontmatter.image.alt}
           loading={"eager"}
         />
-        <div sx={{ marginTop: 0 }}>
+        <div sx={{ marginTop: 0, paddingX: 4 }}>
           <h2
             sx={{
-              textAlign: "center",
               paddingTop: 2,
               paddingBottom: 3,
               marginY: 0,
@@ -64,7 +82,6 @@ function BookCover({ data }: BookCoverProps) {
               fontSize: 3,
               lineHeight: "body",
               margin: 0,
-              paddingX: 4,
             }}
           >
             {bookCover.frontmatter.description}
@@ -87,22 +104,3 @@ function BookCover({ data }: BookCoverProps) {
 }
 
 export default BookCover
-
-export const query = graphql`
-  query($id: String!) {
-    markdownRemark(id: { eq: $id }) {
-      frontmatter {
-        title
-        description
-        image {
-          alt
-          src {
-            childImageSharp {
-              gatsbyImageData(width: 480)
-            }
-          }
-        }
-      }
-    }
-  }
-`
