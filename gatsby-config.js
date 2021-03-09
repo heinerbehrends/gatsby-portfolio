@@ -5,13 +5,13 @@ module.exports = {
     author: `Heiner Behrends`,
   },
   plugins: [
-    "gatsby-plugin-netlify-cms",
-    "gatsby-plugin-theme-ui",
-    "gatsby-plugin-react-helmet",
-    `gatsby-plugin-image`,
-    `gatsby-plugin-sharp`,
-    `gatsby-transformer-sharp`,
-    `gatsby-transformer-json`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: `${__dirname}/static/images`,
+      },
+    },
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -20,11 +20,32 @@ module.exports = {
       },
     },
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-transformer-remark`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        plugins: [
+          // gatsby-remark-relative-images must go before gatsby-remark-images
+          {
+            resolve: `gatsby-remark-relative-images`,
+            options: {
+              // [Optional] The root of "media_folder" in your config.yml
+              // Defaults to "static"
+              staticFolderName: "static",
+              include: [`image.src`],
+            },
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: { maxWidth: 550 },
+          },
+        ],
       },
     },
+    `gatsby-plugin-netlify-cms`,
+    `gatsby-plugin-theme-ui`,
+    "gatsby-plugin-react-helmet",
+    `gatsby-plugin-image`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    `gatsby-transformer-json`,
   ],
 }
