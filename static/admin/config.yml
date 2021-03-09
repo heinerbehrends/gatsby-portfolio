@@ -10,7 +10,6 @@ collections:
   - label: Books
     name: books
     folder: src/content
-    extension: json
     create: true
     fields:
       - { label: Title, name: title, widget: string }
