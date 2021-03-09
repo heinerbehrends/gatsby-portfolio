@@ -9,14 +9,16 @@ import CoverGrid from "../components/coverGrid"
 
 type BookCoverProps = {
   data: {
-    contentJson: {
-      title: string
-      description: string
-      image: {
-        alt: string
-        src: {
-          childImageSharp: {
-            gatsbyImageData: IGatsbyImageData
+    markdownRemark: {
+      frontmatter: {
+        title: string
+        description: string
+        image: {
+          alt: string
+          src: {
+            childImageSharp: {
+              gatsbyImageData: IGatsbyImageData
+            }
           }
         }
       }
@@ -25,7 +27,7 @@ type BookCoverProps = {
 }
 
 function BookCover({ data }: BookCoverProps) {
-  const { contentJson: bookCover } = data
+  const { markdownRemark: bookCover } = data
   return (
     <Layout>
       <div
@@ -38,8 +40,10 @@ function BookCover({ data }: BookCoverProps) {
         }}
       >
         <GatsbyImage
-          image={bookCover.image.src.childImageSharp.gatsbyImageData}
-          alt={bookCover.image.alt}
+          image={
+            bookCover.frontmatter.image.src.childImageSharp.gatsbyImageData
+          }
+          alt={bookCover.frontmatter.image.alt}
           loading={"eager"}
         />
         <div sx={{ marginTop: 0 }}>
@@ -52,7 +56,7 @@ function BookCover({ data }: BookCoverProps) {
               fontSize: 5,
             }}
           >
-            {bookCover.title}
+            {bookCover.frontmatter.title}
           </h2>
           <p
             sx={{
@@ -63,7 +67,7 @@ function BookCover({ data }: BookCoverProps) {
               paddingX: 4,
             }}
           >
-            {bookCover.description}
+            {bookCover.frontmatter.description}
           </p>
         </div>
       </div>
@@ -86,14 +90,16 @@ export default BookCover
 
 export const query = graphql`
   query($id: String!) {
-    contentJson(id: { eq: $id }) {
-      title
-      description
-      image {
-        alt
-        src {
-          childImageSharp {
-            gatsbyImageData(width: 480)
+    markdownRemark(id: { eq: $id }) {
+      frontmatter {
+        title
+        description
+        image {
+          alt
+          src {
+            childImageSharp {
+              gatsbyImageData(width: 480)
+            }
           }
         }
       }

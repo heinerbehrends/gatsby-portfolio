@@ -6,11 +6,13 @@ import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
 
 type CoverGridData = {
   node: {
-    image: {
-      alt: string
-      src: {
-        childImageSharp: {
-          gatsbyImageData: IGatsbyImageData
+    frontmatter: {
+      image: {
+        alt: string
+        src: {
+          childImageSharp: {
+            gatsbyImageData: IGatsbyImageData
+          }
         }
       }
     }
@@ -23,14 +25,18 @@ type CoverGridData = {
 export default function CoverGrid() {
   const data = useStaticQuery(graphql`
     query CoverGridQuery {
-      allContentJson {
+      allMarkdownRemark {
         edges {
           node {
-            image {
-              alt
-              src {
-                childImageSharp {
-                  gatsbyImageData(height: 332)
+            frontmatter {
+              description
+              title
+              image {
+                alt
+                src {
+                  childImageSharp {
+                    gatsbyImageData(height: 332)
+                  }
                 }
               }
             }
@@ -42,8 +48,8 @@ export default function CoverGrid() {
       }
     }
   `)
-  const nodes = data.allContentJson.edges
-  console.log(nodes[1].node.fields.slug)
+  const nodes = data.allMarkdownRemark.edges
+  console.log(nodes)
   return (
     <section
       sx={{
@@ -61,8 +67,8 @@ export default function CoverGrid() {
       {nodes.map(({ node }: CoverGridData) => (
         <Link to={`/${node.fields.slug}`}>
           <GatsbyImage
-            image={node.image.src.childImageSharp.gatsbyImageData}
-            alt={node.image.alt}
+            image={node.frontmatter.image.src.childImageSharp.gatsbyImageData}
+            alt={node.frontmatter.image.alt}
             objectFit={"scale-down"}
           />
         </Link>
