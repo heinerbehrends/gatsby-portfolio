@@ -8,4 +8,6 @@ description: >-
 image:
   src: /images/eden.jpg
   alt: Picture of an arid landscape
+meta:
+  ogDescription: "zsdfsd sdf dsf sdf "
 ---
