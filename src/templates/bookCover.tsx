@@ -86,7 +86,7 @@ function BookCover({ data }: BookCoverProps) {
         title={bookCover.frontmatter.title}
         description={metaDescription}
         image={metaImage}
-        slug={`/books/${bookCover.fields.slug}`}
+        slug={bookCover.fields.slug}
       />
       <div
         sx={{
