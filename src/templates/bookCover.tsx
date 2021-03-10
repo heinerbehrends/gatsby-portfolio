@@ -6,9 +6,16 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
 import CoverGrid from "../components/coverGrid"
+import SEO from "../components/seo"
 
 type BookCoverProps = {
   data: {
+    site: {
+      siteMetadata: {
+        siteUrl: string
+        image: string
+      }
+    }
     markdownRemark: {
       frontmatter: {
         title: string
@@ -21,6 +28,10 @@ type BookCoverProps = {
             }
           }
         }
+        meta: {
+          ogDescription: string | null
+          ogImage: string | null
+        } | null
       }
     }
   }
@@ -28,17 +39,30 @@ type BookCoverProps = {
 
 export const query = graphql`
   query($id: String!) {
+    site {
+      siteMetadata {
+        siteUrl
+        image
+      }
+    }
     markdownRemark(id: { eq: $id }) {
+      fields {
+        slug
+      }
       frontmatter {
         title
-        description
         image {
           alt
           src {
             childImageSharp {
-              gatsbyImageData(placeholder: BLURRED, width: 480)
+              gatsbyImageData(width: 480, placeholder: BLURRED)
             }
           }
+        }
+        description
+        meta {
+          ogDescription
+          ogImage
         }
       }
     }
@@ -47,8 +71,15 @@ export const query = graphql`
 
 function BookCover({ data }: BookCoverProps) {
   const { markdownRemark: bookCover } = data
+  const metaImage =
+    bookCover.frontmatter?.meta?.ogImage || data.site.siteMetadata.image
   return (
     <Layout>
+      <SEO
+        title={bookCover.frontmatter.title}
+        description={bookCover.frontmatter.description}
+        image={metaImage}
+      />
       <div
         sx={{
           display: "grid",
