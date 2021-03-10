@@ -5,9 +5,7 @@ const slugify = require("slugify")
 exports.onCreateNode = ({ node, actions }) => {
   const { createNodeField } = actions
   if (node.internal.type === "MarkdownRemark") {
-    console.log(node)
     const slug = `books/${slugify(node.frontmatter.title, { lower: true })}`
-    console.log(slug)
     createNodeField({
       node,
       name: `slug`,
