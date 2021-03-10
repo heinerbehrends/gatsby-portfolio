@@ -35,7 +35,7 @@ export default function CoverGrid() {
                 alt
                 src {
                   childImageSharp {
-                    gatsbyImageData(height: 332)
+                    gatsbyImageData(height: 332, placeholder: BLURRED)
                   }
                 }
               }
@@ -49,7 +49,6 @@ export default function CoverGrid() {
     }
   `)
   const nodes = data.allMarkdownRemark.edges
-  console.log(nodes)
   return (
     <section
       sx={{
