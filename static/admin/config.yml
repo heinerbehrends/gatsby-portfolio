@@ -30,14 +30,14 @@ collections:
               name: ogDescription,
               widget: text,
               pattern:
-                ['.{12,115}', "Must be between 12 and 115 characters long."],
-              hint: Maximale lengte is 115 tekens.
-              required: false
+                [".{12,115}", "Must be between 12 and 115 characters long"],
+              hint: Maximale lengte is 115 tekens.,
+              required: false,
             }
           - {
               label: Open Graph Image,
               name: ogImage,
               widget: image,
               hint: Gebruik een foto met een ratio van 1.91:1 en een minimale afmeting van 1200 x 630,
-              required: false
+              required: false,
             }
