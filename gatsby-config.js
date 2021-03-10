@@ -1,8 +1,11 @@
 module.exports = {
   siteMetadata: {
-    title: `Jop Luberti portfolio pagina`,
+    title: `Portfolio van Jop Luberti`,
     description: `Grafisch ontwerp voor boekomslagen.`,
-    author: `Heiner Behrends`,
+    author: `Jop Luberti`,
+    keywords: `Grafisch ontwerp, boekomslagen, patronen, ontwerp`,
+    siteUrl: `https://goofy-kalam-085d37.netlify.app`,
+    image: `${__dirname}/static/images/ogImageHome.jpg`,
   },
   plugins: [
     {

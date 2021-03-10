@@ -2,7 +2,13 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
-function SEO({ description = "", lang = "nl", meta = [], title }: SEOProps) {
+function SEO({
+  description = "",
+  lang = "nl",
+  meta = [],
+  title,
+  image,
+}: SEOProps) {
   const { site } = useStaticQuery(
     graphql`
       query {
@@ -11,15 +17,19 @@ function SEO({ description = "", lang = "nl", meta = [], title }: SEOProps) {
             title
             description
             author
+            keywords
+            siteUrl
+            image
           }
         }
       }
     `
   )
-
+  console.log(site)
   const metaDescription = description || site.siteMetadata.description
+  const metaImage = image || site.siteMetadata.image
   const defaultTitle = site.siteMetadata?.title
-
+  console.log(metaDescription)
   return (
     <Helmet
       htmlAttributes={{
@@ -32,6 +42,10 @@ function SEO({ description = "", lang = "nl", meta = [], title }: SEOProps) {
           content: metaDescription,
         },
         {
+          name: "keywords",
+          content: site.siteMetadata.keywords,
+        },
+        {
           property: `og:title`,
           content: title,
         },
@@ -42,6 +56,10 @@ function SEO({ description = "", lang = "nl", meta = [], title }: SEOProps) {
         {
           property: `og:type`,
           content: `website`,
+        },
+        {
+          property: `og:image`,
+          content: metaImage,
         },
         {
           name: `twitter:card`,
@@ -64,12 +82,6 @@ function SEO({ description = "", lang = "nl", meta = [], title }: SEOProps) {
   )
 }
 
-SEO.defaultProps = {
-  lang: `en`,
-  meta: [],
-  description: ``,
-}
-
 type SEOProps = {
   description?: string
   lang?: string
@@ -78,6 +90,7 @@ type SEOProps = {
     | { property: string; content: any; name?: undefined }
   >
   title: string
+  image?: string
 }
 
 export default SEO

@@ -1,17 +1,13 @@
 import React from "react"
 import CoverGrid from "../components/coverGrid"
 import Layout from "../components/layout"
-// import SEO from "../components/seo"
-// import { Helmet } from "react-helmet"
+import SEO from "../components/seo"
 
 function IndexPage() {
   return (
     <>
-      {/* <Helmet>
-        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
-      </Helmet> */}
       <Layout>
-        {/* <SEO title="Home" /> */}
+        <SEO title="Jop Luberti Grafische Vormgeving" />
         <CoverGrid />
       </Layout>
     </>
