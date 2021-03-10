@@ -17,6 +17,9 @@ type BookCoverProps = {
       }
     }
     markdownRemark: {
+      fields: {
+        slug: string
+      }
       frontmatter: {
         title: string
         description: string
@@ -71,15 +74,19 @@ export const query = graphql`
 
 function BookCover({ data }: BookCoverProps) {
   const { markdownRemark: bookCover } = data
-  const metaImage =
-    `${data.site.siteMetadata.siteUrl}${bookCover.frontmatter?.meta?.ogImage}` ||
-    data.site.siteMetadata.image
+  const metaDescription =
+    bookCover.frontmatter?.meta?.ogDescription ||
+    bookCover.frontmatter.description
+  const metaImage = bookCover.frontmatter?.meta?.ogImage
+    ? `${data.site.siteMetadata.siteUrl}${bookCover.frontmatter?.meta?.ogImage}`
+    : data.site.siteMetadata.image
   return (
     <Layout>
       <SEO
         title={bookCover.frontmatter.title}
-        description={bookCover.frontmatter.description}
+        description={metaDescription}
         image={metaImage}
+        slug={`/books/${bookCover.fields.slug}`}
       />
       <div
         sx={{

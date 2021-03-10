@@ -2,14 +2,28 @@ import React from "react"
 import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 
+type metaType = {
+  site: {
+    siteMetadata: {
+      title: string
+      description: string
+      author: string
+      keywords: string
+      siteUrl: string
+      image: string
+    }
+  }
+}
+
 function SEO({
   description = "",
   lang = "nl",
   meta = [],
   title,
   image,
+  slug,
 }: SEOProps) {
-  const { site } = useStaticQuery(
+  const { site }: metaType = useStaticQuery(
     graphql`
       query {
         site {
@@ -25,11 +39,9 @@ function SEO({
       }
     `
   )
-  console.log(site)
   const metaDescription = description || site.siteMetadata.description
   const metaImage = image || site.siteMetadata.image
-  const defaultTitle = site.siteMetadata?.title
-  console.log(metaDescription)
+
   return (
     <Helmet
       htmlAttributes={{
@@ -62,6 +74,10 @@ function SEO({
           content: metaImage,
         },
         {
+          property: `og:url`,
+          content: `${site.siteMetadata.siteUrl}${slug}`,
+        },
+        {
           name: `twitter:card`,
           content: `summary`,
         },
@@ -91,6 +107,7 @@ type SEOProps = {
   >
   title: string
   image?: string
+  slug?: string
 }
 
 export default SEO
