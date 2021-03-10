@@ -14,6 +14,12 @@ collections:
     fields:
       - { label: Title, name: title, widget: string }
       - { label: Description, name: description, widget: text }
+      - label: Image
+        name: image
+        widget: object
+        fields:
+          - { label: Image, name: src, widget: image }
+          - { label: Alt, name: alt, widget: string }
       - label: Meta
         name: meta
         widget: object
@@ -24,17 +30,14 @@ collections:
               name: ogDescription,
               widget: text,
               pattern:
-                [".{12, 110}", "Must be between 12 and 115 characters long."],
+                ['.{12,115}', "Must be between 12 and 115 characters long."],
+              hint: Maximale lengte is 115 tekens.
+              required: false
             }
           - {
               label: Open Graph Image,
               name: ogImage,
               widget: image,
               hint: Gebruik een foto met een ratio van 1.91:1 en een minimale afmeting van 1200 x 630,
+              required: false
             }
-      - label: Image
-        name: image
-        widget: object
-        fields:
-          - { label: Image, name: src, widget: image }
-          - { label: Alt, name: alt, widget: string }
