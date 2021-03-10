@@ -72,7 +72,8 @@ export const query = graphql`
 function BookCover({ data }: BookCoverProps) {
   const { markdownRemark: bookCover } = data
   const metaImage =
-    bookCover.frontmatter?.meta?.ogImage || data.site.siteMetadata.image
+    `${data.site.siteMetadata.siteUrl}${bookCover.frontmatter?.meta?.ogImage}` ||
+    data.site.siteMetadata.image
   return (
     <Layout>
       <SEO

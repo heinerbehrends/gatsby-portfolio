@@ -5,7 +5,7 @@ module.exports = {
     author: `Jop Luberti`,
     keywords: `Grafisch ontwerp, boekomslagen, patronen, ontwerp`,
     siteUrl: `https://goofy-kalam-085d37.netlify.app`,
-    image: `/images/ogImageHome.jpg`,
+    image: `https://goofy-kalam-085d37.netlify.app/images/ogImageHome.jpg`,
   },
   plugins: [
     {
