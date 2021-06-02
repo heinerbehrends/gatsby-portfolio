@@ -3,8 +3,7 @@
 import { jsx } from "theme-ui"
 import React, { ReactNode } from "react"
 import { Helmet } from "react-helmet"
-import PropTypes from "prop-types"
-import { useStaticQuery, graphql } from "gatsby"
+import { Global } from "@emotion/react"
 import Header from "./header"
 import "./layout.css"
 
@@ -13,18 +12,15 @@ type LayoutProps = {
 }
 
 const Layout = ({ children }: LayoutProps) => {
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
-
   return (
     <>
+      <Global
+        styles={theme => ({
+          "*": {
+            fontFamily: "Helvetica, 'Helveltic Neue', Arial, 'Liberation Sans'",
+          },
+        })}
+      />
       <Helmet>
         <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
       </Helmet>
@@ -37,7 +33,7 @@ const Layout = ({ children }: LayoutProps) => {
           paddingTop: 3,
         }}
       >
-        <main sx={{ marginTop: "64px" }}>{children}</main>
+        <main sx={{ marginTop: "140px" }}>{children}</main>
         <footer
           style={{
             marginTop: `2rem`,
@@ -50,10 +46,6 @@ const Layout = ({ children }: LayoutProps) => {
       </div>
     </>
   )
-}
-
-Layout.propTypes = {
-  children: PropTypes.node.isRequired,
 }
 
 export default Layout
