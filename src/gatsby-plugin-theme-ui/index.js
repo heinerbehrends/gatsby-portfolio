@@ -1,7 +1,7 @@
 const theme = {
   colors: {
     text: "#555",
-    background: "rgba(217,217,217,.3)",
+    background: "#fff",
     primary: "#fff",
     secondary: "#333",
   },
@@ -24,7 +24,7 @@ const theme = {
   breakpoints: ["420px", "576px", "800px"],
   shadows: {
     big: "2px 2px 4px rgba(0, 0, 0, 0.1)",
-    focus: "inset 0 0 3px 3px #FFC0E2",
+    focus: "inset 0 0 0 1px #000",
     text: "5px 5px 5px rgba(0, 0, 0, 0.2)",
   },
 }

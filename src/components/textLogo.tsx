@@ -1,13 +1,15 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import { Link } from "gatsby"
+import logoWebm from "../videos/EASY_TIGER.webm"
+import logoMp4 from "../videos/EASY_TIGER.mp4"
 
 export default function TextLogo() {
   return (
     <div
       sx={{
         display: "flex",
-        alignItems: "center",
+        alignItems: "flex-end",
         height: "100%",
         flex: "1 1 auto",
       }}
@@ -17,34 +19,19 @@ export default function TextLogo() {
         sx={{
           textDecoration: "none",
           color: "text",
-          paddingX: ["1", "2", "3"],
-          paddingY: "2",
+          paddingLeft: ["1", "2", "3"],
+          paddingBottom: "10px",
           "&:focus": {
             outline: "none",
             boxShadow: "focus",
           },
         }}
       >
-        <h4
-          sx={{
-            color: "#333",
-            fontWeight: "thin",
-            fontSize: ["5", "5", "36px"],
-            margin: "1",
-          }}
-        >
-          Jop Luberti
-          <span
-            sx={{
-              fontSize: "3",
-              fontStyle: "normal",
-              display: ["none", "none", "none", "none", "inline"],
-            }}
-          >
-            {" "}
-            Grafische Vormgeving
-          </span>
-        </h4>
+        <video autoPlay loop muted height="60px" sx={{ padding: "0" }}>
+          <source src={logoMp4} type="video/mp4" />
+          <source src={logoWebm} type="video/webm" />
+          <h1>Flying Tiger Design</h1>
+        </video>
       </Link>
     </div>
   )

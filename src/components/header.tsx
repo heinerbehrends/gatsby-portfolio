@@ -9,22 +9,30 @@ export default function Header() {
     <header
       sx={{
         display: "flex",
-        maxWidth: "100vw",
-        backgroundColor: "#fffbfb",
-        boxShadow: "big",
+        // width: "100vw",
+        backgroundColor: "#fff",
+        // boxShadow: "big",
+        borderBottom: "1.5px dashed black",
         position: "fixed",
         zIndex: "2",
         top: "0",
         width: "100%",
-        paddingX: ["2", "3"],
-        paddingY: "4",
-        height: "64px",
+        height: "90px",
         // borderBottom: "1px solid",
         borderColor: "accent",
       }}
     >
-      <TextLogo />
-      <Nav />
+      <div
+        sx={{
+          width: ["100%", "100%", "960px"],
+          marginX: "auto",
+          display: "flex",
+          justifyContent: "space-between",
+        }}
+      >
+        <TextLogo />
+        <Nav />
+      </div>
     </header>
   )
 }

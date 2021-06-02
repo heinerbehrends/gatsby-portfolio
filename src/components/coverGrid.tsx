@@ -1,6 +1,7 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import React from "react"
+import CoverGridItem from "./coverGridItem"
 import { graphql, Link, useStaticQuery } from "gatsby"
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
 
@@ -53,23 +54,20 @@ export default function CoverGrid() {
     <section
       sx={{
         display: "grid",
-        gridTemplateColumns: [
-          "1fr 1fr",
-          "1fr 1fr",
-          "1fr 1fr 1fr",
-          "1fr 1fr 1fr 1fr",
-        ],
-        gap: "15px",
+        gridTemplateColumns: ["1fr 1fr", "1fr 1fr", "1fr 1fr 1fr"],
+        gap: "60px",
         alignItems: "center",
       }}
     >
       {nodes.map(({ node }: CoverGridData) => (
         <Link to={`/${node.fields.slug}`}>
-          <GatsbyImage
-            image={node.frontmatter.image.src.childImageSharp.gatsbyImageData}
-            alt={node.frontmatter.image.alt}
-            objectFit={"scale-down"}
-          />
+          <CoverGridItem>
+            <GatsbyImage
+              image={node.frontmatter.image.src.childImageSharp.gatsbyImageData}
+              alt={node.frontmatter.image.alt}
+              objectFit={"scale-down"}
+            />
+          </CoverGridItem>
         </Link>
       ))}
     </section>

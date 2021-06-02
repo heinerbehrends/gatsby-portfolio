@@ -15,15 +15,16 @@ export default function TopBarNavItem({
   return (
     <Link
       activeStyle={{
-        fontWeight: "500",
         color: "#333",
       }}
       partiallyActive={true}
       sx={{
+        fontWeight: "500",
+        fontStyle: "italic",
+        textTransform: "uppercase",
         textDecoration: "none",
         color: "#888",
-        fontSize: ["2", "2", "3"],
-        fontWeight: "thin",
+        fontSize: ["2", "2", "2"],
         backgroundColor: "transparent",
         "&:hover": { color: "#333" },
         "&:focus": {
@@ -37,8 +38,9 @@ export default function TopBarNavItem({
         sx={{
           display: "flex",
           height: "100%",
-          alignItems: "center",
+          alignItems: "flex-end",
           paddingX: ["2", "2", "3"],
+          paddingBottom: "17px",
         }}
       >
         {children}
