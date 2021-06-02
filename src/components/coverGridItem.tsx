@@ -2,7 +2,11 @@
 import { jsx } from "theme-ui"
 import React from "react"
 
-export default function CoverGridItem({ children }) {
+export default function CoverGridItem({
+  children,
+}: {
+  children: React.ReactNode
+}) {
   return (
     <div
       sx={{
