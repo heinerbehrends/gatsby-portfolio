@@ -15,7 +15,7 @@ export default function CoverGridItem({
         justifyContent: "center",
         border: "1.5px solid black",
         paddingY: "10%",
-        paddingX: "20%",
+        paddingX: "10%",
       }}
     >
       {children}
