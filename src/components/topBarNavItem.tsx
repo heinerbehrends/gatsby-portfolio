@@ -19,17 +19,15 @@ export default function TopBarNavItem({
       }}
       partiallyActive={true}
       sx={{
-        fontWeight: "500",
         fontStyle: "italic",
         textTransform: "uppercase",
         textDecoration: "none",
         color: "#888",
-        fontSize: ["2", "2", "2"],
+        fontSize: "2",
         backgroundColor: "transparent",
         "&:hover": { color: "#333" },
         "&:focus": {
-          outline: "none",
-          boxShadow: "focus",
+          outline: "1.5px dashed black",
         },
       }}
       to={location}
@@ -40,7 +38,7 @@ export default function TopBarNavItem({
           height: "100%",
           alignItems: "flex-end",
           paddingX: ["2", "2", "3"],
-          paddingBottom: "17px",
+          paddingBottom: "12px",
         }}
       >
         {children}

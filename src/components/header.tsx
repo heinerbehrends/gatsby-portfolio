@@ -1,25 +1,21 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import { Link } from "gatsby"
 import Nav from "./nav"
-import TextLogo from "./textLogo"
+import VideoLogo from "./videoLogo"
 
 export default function Header() {
   return (
     <header
       sx={{
         display: "flex",
-        // width: "100vw",
         backgroundColor: "#fff",
-        // boxShadow: "big",
         borderBottom: "1.5px dashed black",
         position: "fixed",
+        paddingLeft: ["2", "0"],
         zIndex: "2",
         top: "0",
         width: "100%",
         height: "90px",
-        // borderBottom: "1px solid",
-        borderColor: "accent",
       }}
     >
       <div
@@ -27,10 +23,11 @@ export default function Header() {
           width: ["100%", "100%", "960px"],
           marginX: "auto",
           display: "flex",
+          flexDirection: ["column", "row"],
           justifyContent: "space-between",
         }}
       >
-        <TextLogo />
+        <VideoLogo />
         <Nav />
       </div>
     </header>

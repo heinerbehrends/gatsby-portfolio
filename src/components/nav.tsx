@@ -8,7 +8,7 @@ export default function Nav() {
       sx={{
         display: "flex",
         flex: "1 1 auto",
-        justifyContent: "flex-end",
+        justifyContent: ["flex-start", "flex-end"],
         height: "100%",
         margin: "0",
       }}

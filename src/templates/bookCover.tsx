@@ -4,41 +4,10 @@ import { jsx } from "theme-ui"
 import React from "react"
 import { graphql } from "gatsby"
 import Layout from "../components/layout"
-import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
+import { GatsbyImage } from "gatsby-plugin-image"
 import CoverGrid from "../components/coverGrid"
 import SEO from "../components/seo"
-
-type BookCoverProps = {
-  data: {
-    site: {
-      siteMetadata: {
-        siteUrl: string
-        image: string
-      }
-    }
-    markdownRemark: {
-      fields: {
-        slug: string
-      }
-      frontmatter: {
-        title: string
-        description: string
-        image: {
-          alt: string
-          src: {
-            childImageSharp: {
-              gatsbyImageData: IGatsbyImageData
-            }
-          }
-        }
-        meta: {
-          ogDescription: string | null
-          ogImage: string | null
-        } | null
-      }
-    }
-  }
-}
+import { BookCoverProps } from "./bookCoverProps"
 
 export const query = graphql`
   query($id: String!) {
@@ -58,7 +27,12 @@ export const query = graphql`
           alt
           src {
             childImageSharp {
-              gatsbyImageData(width: 480, placeholder: BLURRED)
+              gatsbyImageData(
+                width: 480
+                height: 480
+                placeholder: TRACED_SVG
+                aspectRatio: 1
+              )
             }
           }
         }
@@ -88,23 +62,26 @@ function BookCover({ data }: BookCoverProps) {
         image={metaImage}
         slug={bookCover.fields.slug}
       />
-      <div
+      <section
         sx={{
           display: "grid",
           gap: 3,
-          gridTemplateColumns: "3fr 2fr",
-          paddingX: 0,
-          paddingBottom: 0,
+          gridTemplateColumns: ["1fr", "1fr", "1fr", "1fr 1fr"],
+          justifyItems: "center",
+          padding: 0,
+          paddingY: 5,
+          borderBottom: `1.5px dashed black`,
         }}
       >
         <GatsbyImage
+          sx={{ height: ["320px", "480px"], width: ["320px", "480px"] }}
           image={
             bookCover.frontmatter.image.src.childImageSharp.gatsbyImageData
           }
           alt={bookCover.frontmatter.image.alt}
           loading={"eager"}
         />
-        <div sx={{ marginTop: 0, paddingX: 4 }}>
+        <div sx={{ marginTop: 0, paddingX: [2, 4] }}>
           <h2
             sx={{
               paddingTop: 2,
@@ -121,22 +98,13 @@ function BookCover({ data }: BookCoverProps) {
               fontSize: 3,
               lineHeight: "body",
               margin: 0,
+              maxWidth: "576px",
             }}
           >
             {bookCover.frontmatter.description}
           </p>
         </div>
-      </div>
-      <h3
-        sx={{
-          paddingY: 3,
-          textAlign: "center",
-          fontSize: 4,
-          fontWeight: "body",
-        }}
-      >
-        Ontdek meer
-      </h3>
+      </section>
       <CoverGrid />
     </Layout>
   )

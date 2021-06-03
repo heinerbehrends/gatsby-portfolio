@@ -5,45 +5,41 @@ import React, { ReactNode } from "react"
 import { Helmet } from "react-helmet"
 import { Global } from "@emotion/react"
 import Header from "./header"
-import "./layout.css"
+import Footer from "./footer"
+import { Theme } from "theme-ui"
 
 type LayoutProps = {
   children: ReactNode
 }
 
-const Layout = ({ children }: LayoutProps) => {
+function Layout({ children }: LayoutProps) {
   return (
     <>
       <Global
-        styles={theme => ({
-          "*": {
-            fontFamily: "Helvetica, 'Helveltic Neue', Arial, 'Liberation Sans'",
-          },
-        })}
+        styles={(theme: Theme) => {
+          return {
+            "*": {
+              // @ts-ignore
+              fontFamily: theme?.fonts?.body,
+            },
+          }
+        }}
       />
       <Helmet>
         <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
       </Helmet>
       <Header />
-      <div
+      <main
         sx={{
           margin: `0 auto`,
-          maxWidth: 960,
+          marginTop: "90px",
+          maxWidth: "960px",
           paddingX: 3,
-          paddingTop: 3,
         }}
       >
-        <main sx={{ marginTop: "140px" }}>{children}</main>
-        <footer
-          style={{
-            marginTop: `2rem`,
-          }}
-        >
-          © {new Date().getFullYear()}, Built with
-          {` `}
-          <a href="https://www.gatsbyjs.com">Gatsby</a>
-        </footer>
-      </div>
+        {children}
+      </main>
+      <Footer />
     </>
   )
 }

@@ -3,7 +3,11 @@ import { jsx } from "theme-ui"
 import React from "react"
 import CoverGridItem from "./coverGridItem"
 import { graphql, Link, useStaticQuery } from "gatsby"
-import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
+import {
+  GatsbyImage,
+  IGatsbyImageData,
+  GatsbyImageProps,
+} from "gatsby-plugin-image"
 
 type CoverGridData = {
   node: {
@@ -36,7 +40,7 @@ export default function CoverGrid() {
                 alt
                 src {
                   childImageSharp {
-                    gatsbyImageData(height: 332, placeholder: BLURRED)
+                    gatsbyImageData(height: 332, placeholder: TRACED_SVG)
                   }
                 }
               }
@@ -53,9 +57,10 @@ export default function CoverGrid() {
   return (
     <section
       sx={{
+        paddingY: "5",
         display: "grid",
         gridTemplateColumns: ["1fr 1fr", "1fr 1fr", "1fr 1fr 1fr"],
-        gap: "60px",
+        gap: "64px",
         alignItems: "center",
       }}
     >
