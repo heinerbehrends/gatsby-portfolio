@@ -5,12 +5,10 @@ import SEO from "../components/seo"
 
 function IndexPage() {
   return (
-    <>
-      <Layout>
-        <SEO title="Jop Luberti Grafische Vormgeving" />
-        <CoverGrid />
-      </Layout>
-    </>
+    <Layout>
+      <SEO title="Jop Luberti Grafische Vormgeving" />
+      <CoverGrid />
+    </Layout>
   )
 }
 
