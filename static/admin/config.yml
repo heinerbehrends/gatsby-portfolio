@@ -48,7 +48,16 @@ collections:
         name: "info"
         file: "src/content/info/info-page.yml"
         fields:
-          - { label: About, name: about, widget: list, allow_add: true }
+          - label: About
+            name: about
+            widget: list
+            allow_add: true
+            fields:
+              - { label: p1, name: p1, widget: string }
+              - { label: p2, name: p2, widget: string }
+              - { label: p3, name: p3, widget: string }
+              - { label: p4, name: p4, widget: string }
+              - { label: p5, name: p5, widget: string }
           - label: Adress
             name: address
             widget: object
