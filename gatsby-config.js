@@ -19,7 +19,14 @@ module.exports = {
       resolve: `gatsby-source-filesystem`,
       options: {
         name: `bookcovers`,
-        path: `${__dirname}/src/content`,
+        path: `${__dirname}/src/content/books`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `info`,
+        path: `${__dirname}/src/content/info`,
       },
     },
     {
@@ -49,6 +56,6 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
-    `gatsby-transformer-json`,
+    `gatsby-transformer-yaml`,
   ],
 }
