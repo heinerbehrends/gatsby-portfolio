@@ -40,6 +40,7 @@ export default function Info({ data }: InfoData) {
       <section
         sx={{
           maxWidth: "1024px",
+          boxSizing: "border-box",
           marginX: [3, "auto"],
           marginY: [3],
           padding: [3, 4],
