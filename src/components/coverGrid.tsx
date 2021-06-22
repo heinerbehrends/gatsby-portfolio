@@ -6,6 +6,7 @@ import { graphql, useStaticQuery } from "gatsby"
 import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
 
 type CoverGridData = {
+  index: number
   node: {
     frontmatter: {
       image: {
@@ -63,8 +64,8 @@ export default function CoverGrid() {
         alignItems: "center",
       }}
     >
-      {nodes.map(({ node }: CoverGridData) => (
-        <CoverGridItem link={`/${node.fields.slug}`}>
+      {nodes.map(({ node, index }: CoverGridData) => (
+        <CoverGridItem link={`/${node.fields.slug}`} key={index}>
           <GatsbyImage
             style={{ width: "100%" }}
             image={node.frontmatter.image.src.childImageSharp.gatsbyImageData}
