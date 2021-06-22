@@ -2,12 +2,8 @@
 import { jsx } from "theme-ui"
 import React from "react"
 import CoverGridItem from "./coverGridItem"
-import { graphql, Link, useStaticQuery } from "gatsby"
-import {
-  GatsbyImage,
-  IGatsbyImageData,
-  GatsbyImageProps,
-} from "gatsby-plugin-image"
+import { graphql, useStaticQuery } from "gatsby"
+import { GatsbyImage, IGatsbyImageData } from "gatsby-plugin-image"
 
 type CoverGridData = {
   node: {
@@ -40,7 +36,7 @@ export default function CoverGrid() {
                 alt
                 src {
                   childImageSharp {
-                    gatsbyImageData(height: 332, placeholder: TRACED_SVG)
+                    gatsbyImageData(height: 480, placeholder: NONE)
                   }
                 }
               }
@@ -57,23 +53,25 @@ export default function CoverGrid() {
   return (
     <section
       sx={{
-        paddingY: "5",
+        maxWidth: "1024px",
+        marginX: "auto",
+        paddingY: 3,
+        paddingX: 3,
         display: "grid",
-        gridTemplateColumns: ["1fr 1fr", "1fr 1fr", "1fr 1fr 1fr"],
-        gap: "64px",
+        gridTemplateColumns: ["1fr", "1fr 1fr", "1fr 1fr", "1fr 1fr 1fr"],
+        gap: [3, 3, 4, 5],
         alignItems: "center",
       }}
     >
       {nodes.map(({ node }: CoverGridData) => (
-        <Link to={`/${node.fields.slug}`}>
-          <CoverGridItem>
-            <GatsbyImage
-              image={node.frontmatter.image.src.childImageSharp.gatsbyImageData}
-              alt={node.frontmatter.image.alt}
-              objectFit={"scale-down"}
-            />
-          </CoverGridItem>
-        </Link>
+        <CoverGridItem link={`/${node.fields.slug}`}>
+          <GatsbyImage
+            style={{ width: "100%" }}
+            image={node.frontmatter.image.src.childImageSharp.gatsbyImageData}
+            alt={node.frontmatter.image.alt}
+            objectFit={"scale-down"}
+          />
+        </CoverGridItem>
       ))}
     </section>
   )

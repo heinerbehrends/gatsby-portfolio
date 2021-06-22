@@ -1,24 +1,34 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
 import React from "react"
+import { Link as GatsbyLink } from "gatsby"
+import { Link } from "theme-ui"
 
 export default function CoverGridItem({
   children,
+  link,
 }: {
   children: React.ReactNode
+  link: string
 }) {
   return (
-    <div
+    <Link
+      // @ts-ignore
+      to={link}
+      as={GatsbyLink}
       sx={{
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
-        border: "1.5px solid black",
-        paddingY: "10%",
-        paddingX: "10%",
+        border: "solid",
+        padding: 0,
+        "&:focus": {
+          border: "dashed",
+          outline: "none",
+        },
       }}
     >
       {children}
-    </div>
+    </Link>
   )
 }
