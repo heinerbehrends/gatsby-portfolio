@@ -8,6 +8,7 @@ import { GatsbyImage } from "gatsby-plugin-image"
 import CoverGrid from "../components/coverGrid"
 import SEO from "../components/seo"
 import { BookCoverProps } from "./bookCoverProps"
+import HorizontalRule from "../components/horizontalRule"
 
 export const query = graphql`
   query($id: String!) {
@@ -30,7 +31,7 @@ export const query = graphql`
               gatsbyImageData(
                 width: 480
                 height: 480
-                placeholder: TRACED_SVG
+                placeholder: NONE
                 aspectRatio: 1
               )
             }
@@ -64,38 +65,50 @@ function BookCover({ data }: BookCoverProps) {
       />
       <section
         sx={{
+          maxWidth: "1024px",
+          marginX: "auto",
           display: "grid",
           gap: 3,
           gridTemplateColumns: ["1fr", "1fr", "1fr", "1fr 1fr"],
-          justifyItems: "center",
-          padding: 0,
-          paddingY: 5,
-          borderBottom: `1.5px dashed black`,
+          justifyItems: ["center", "center", "center", "inherit"],
+          paddingX: [3, 0],
+          paddingY: [2, 3],
         }}
       >
         <GatsbyImage
-          sx={{ height: ["320px", "480px"], width: ["320px", "480px"] }}
+          sx={{
+            width: "100%",
+            height: "100%",
+            maxHeight: ["320px", "320px", "480px"],
+            maxWidth: ["320px", "320px", "480px"],
+            border: "solid",
+          }}
           image={
             bookCover.frontmatter.image.src.childImageSharp.gatsbyImageData
           }
           alt={bookCover.frontmatter.image.alt}
           loading={"eager"}
         />
-        <div sx={{ marginTop: 0, paddingX: [2, 4] }}>
+        <div sx={{ paddingX: 3 }}>
           <h2
             sx={{
+              textTransform: "uppercase",
+              fontStyle: "italic",
+              fontWeight: "bold",
+              letterSpacing: "1.5px",
               paddingTop: 2,
               paddingBottom: 3,
               marginY: 0,
-              fontSize: 5,
+              fontSize: 4,
             }}
           >
             {bookCover.frontmatter.title}
           </h2>
           <p
             sx={{
-              whiteSpace: "pre-wrap",
-              fontSize: 3,
+              fontStyle: "italic",
+              letterSpacing: "1.5px",
+              fontSize: 2,
               lineHeight: "body",
               margin: 0,
               maxWidth: "576px",
@@ -105,6 +118,7 @@ function BookCover({ data }: BookCoverProps) {
           </p>
         </div>
       </section>
+      <HorizontalRule />
       <CoverGrid />
     </Layout>
   )
