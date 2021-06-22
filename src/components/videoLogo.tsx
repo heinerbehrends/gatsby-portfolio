@@ -9,12 +9,9 @@ export default function VideoLogo() {
     <Link
       to={"/"}
       sx={{
-        textDecoration: "none",
-        color: "text",
-        paddingX: ["1", "2", "3"],
-        paddingY: "10px",
-        paddingBottom: ["1"],
-        paddingTop: ["3"],
+        height: ["35px", "50px", "60px"],
+        paddingX: [3, 3, 3, 0],
+        paddingY: 0,
         "&:focus": {
           outline: "1.5px dashed black",
         },
@@ -24,7 +21,7 @@ export default function VideoLogo() {
         autoPlay
         loop
         muted
-        sx={{ padding: "0", height: ["40px", "60px"] }}
+        sx={{ padding: "0", height: ["35px", "50px", "60px"] }}
       >
         <source src={logoMp4} type="video/mp4" />
         <source src={logoWebm} type="video/webm" />
