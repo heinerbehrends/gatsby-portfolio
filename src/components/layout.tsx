@@ -22,6 +22,9 @@ function Layout({ children }: LayoutProps) {
               // @ts-ignore
               fontFamily: theme?.fonts?.body,
             },
+            body: {
+              margin: 0,
+            },
           }
         }}
       />
@@ -32,9 +35,7 @@ function Layout({ children }: LayoutProps) {
       <main
         sx={{
           margin: `0 auto`,
-          marginTop: "90px",
-          maxWidth: "960px",
-          paddingX: 3,
+          marginTop: ["75px", "90px"],
         }}
       >
         {children}
