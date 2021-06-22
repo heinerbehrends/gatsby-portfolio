@@ -1,23 +1,35 @@
 /** @jsx jsx */
 import React from "react"
-import { jsx } from "theme-ui"
+import { jsx, Themed } from "theme-ui"
 
 export default function Footer() {
   return (
     <footer
       sx={{
-        // marginTop: 5,
-        borderTop: `1.5px dashed black`,
+        borderTop: `dashed`,
         paddingY: 4,
       }}
     >
-      <div sx={{ maxWidth: "960px", marginX: "auto", paddingLeft: "3" }}>
-        All Images © {new Date().getFullYear()} Jop Luberti, Built with love by
-        {` `}
-        <a href="https://www.flyfi.nl">
+      <address
+        sx={{
+          maxWidth: "1024px",
+          marginX: "auto",
+          paddingLeft: [3, 0],
+          fontSize: 1,
+          textTransform: "uppercase",
+          letterSpacing: "1px",
+          lineHeight: "body",
+        }}
+      >
+        All Images © {new Date().getFullYear()} Jop Luberti. <br />
+        Address: Martinikerkhof 15 A 9712 JG Groningen, Netherlands <br />
+        KVK / Chamber of commerce number: 59959010 <br />
+        Built with love by
+        {``}
+        <Themed.a sx={{ paddingY: 0 }} href="https://www.flyfi.nl">
           <em>flyfi</em>
-        </a>{" "}
-      </div>
+        </Themed.a>{" "}
+      </address>
     </footer>
   )
 }
