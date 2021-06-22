@@ -9,7 +9,7 @@ public_folder: /images
 collections:
   - label: Book
     name: books
-    folder: src/content
+    folder: src/content/books
     create: true
     fields:
       - { label: Title, name: title, widget: string }
@@ -41,3 +41,20 @@ collections:
               hint: Gebruik een foto met een ratio van 1.91:1 en een minimale afmeting van 1200 x 630,
               required: false,
             }
+  - label: "Pages"
+    name: "pages"
+    files:
+      - label: "Info"
+        name: "info"
+        file: "src/content/info/info-page.yml"
+        fields:
+          - { label: About, name: about, widget: list, allow_add: true }
+          - label: Adress
+            name: address
+            widget: object
+            required: true
+            fields:
+              - { label: email, name: email, widget: string }
+              - { label: phone, name: phone, widget: string }
+              - { label: insta, name: insta, widget: string }
+              - { label: website, name: website, widget: string }
