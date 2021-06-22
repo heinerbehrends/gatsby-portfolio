@@ -1,6 +1,6 @@
 /** @jsx jsx */
 import { jsx } from "theme-ui"
-import Nav from "./nav"
+import InfoLink from "./infoLink"
 import VideoLogo from "./videoLogo"
 
 export default function Header() {
@@ -9,26 +9,27 @@ export default function Header() {
       sx={{
         display: "flex",
         backgroundColor: "#fff",
-        borderBottom: "1.5px dashed black",
+        borderBottom: "dashed",
         position: "fixed",
-        paddingLeft: ["2", "0"],
         zIndex: "2",
         top: "0",
         width: "100%",
-        height: "90px",
+        height: ["75px", "90px"],
       }}
     >
       <div
         sx={{
-          width: ["100%", "100%", "960px"],
+          paddingBottom: 3,
+          width: "100%",
+          maxWidth: "1024px",
           marginX: "auto",
           display: "flex",
-          flexDirection: ["column", "row"],
           justifyContent: "space-between",
+          alignItems: "flex-end",
         }}
       >
         <VideoLogo />
-        <Nav />
+        <InfoLink />
       </div>
     </header>
   )
