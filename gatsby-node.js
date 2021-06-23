@@ -1,4 +1,3 @@
-// @ts-nocheck
 const path = require("path")
 const slugify = require("slugify")
 
@@ -29,7 +28,7 @@ exports.createPages = async ({ graphql, actions, reporter }) => {
                 alt
                 src {
                   childImageSharp {
-                    gatsbyImageData(height: 332)
+                    gatsbyImageData(height: 480)
                   }
                 }
               }
