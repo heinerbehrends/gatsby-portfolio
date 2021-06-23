@@ -21,9 +21,17 @@ function Layout({ children }: LayoutProps) {
             "*": {
               // @ts-ignore
               fontFamily: theme?.fonts?.body,
+              boxSizing: "border-box",
             },
             body: {
               margin: 0,
+            },
+            p: {
+              marginTop: 0,
+              marginBottom: 0,
+              "+ p": {
+                textIndent: "32px",
+              },
             },
           }
         }}
@@ -36,6 +44,8 @@ function Layout({ children }: LayoutProps) {
         sx={{
           margin: `0 auto`,
           marginTop: ["75px", "90px"],
+          // to prevent margin collaps
+          border: "1px solid transparent",
         }}
       >
         {children}
