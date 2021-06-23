@@ -25,7 +25,7 @@ const theme: Theme = {
   },
   fontSizes: [12, 14, 16, 20, 24, 32, 48, 64, 72],
   space: [0, 4, 8, 16, 32, 64, 128, 256, 512],
-  breakpoints: ["420px", "650px", "1024px"],
+  breakpoints: ["450px", "960px", "1055px"],
   shadows: {
     big: "2px 2px 4px rgba(0, 0, 0, 0.1)",
     focus: "0 0 0 1px #000",
@@ -41,7 +41,7 @@ const theme: Theme = {
       fontWeight: "bold",
       textDecoration: "none",
       color: "text",
-      padding: 2,
+      paddingBottom: 2,
       ":hover": {
         textDecoration: "underline",
       },
