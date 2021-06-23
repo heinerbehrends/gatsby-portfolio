@@ -22,6 +22,8 @@ export const query = graphql`
       fields {
         slug
       }
+      html
+      rawMarkdownBody
       frontmatter {
         title
         image {
@@ -37,7 +39,6 @@ export const query = graphql`
             }
           }
         }
-        description
         meta {
           ogDescription
           ogImage
@@ -50,8 +51,7 @@ export const query = graphql`
 function BookCover({ data }: BookCoverProps) {
   const { markdownRemark: bookCover } = data
   const metaDescription =
-    bookCover.frontmatter?.meta?.ogDescription ||
-    bookCover.frontmatter.description
+    bookCover.frontmatter?.meta?.ogDescription || bookCover.rawMarkdownBody
   const metaImage = bookCover.frontmatter?.meta?.ogImage
     ? `${data.site.siteMetadata.siteUrl}${bookCover.frontmatter?.meta?.ogImage}`
     : data.site.siteMetadata.image
@@ -69,9 +69,9 @@ function BookCover({ data }: BookCoverProps) {
           marginX: "auto",
           display: "grid",
           gap: 3,
-          gridTemplateColumns: ["1fr", "1fr", "1fr", "1fr 1fr"],
+          gridTemplateColumns: ["1fr", "1fr", "1fr 1fr", "1fr 1fr"],
           justifyItems: ["center", "center", "center", "inherit"],
-          paddingX: [3, 0],
+          paddingX: [3, 3, 3, 0],
           paddingY: [2, 3],
         }}
       >
@@ -79,8 +79,8 @@ function BookCover({ data }: BookCoverProps) {
           sx={{
             width: "100%",
             height: "100%",
-            maxHeight: ["320px", "320px", "480px"],
-            maxWidth: ["320px", "320px", "480px"],
+            maxHeight: ["320px", "480px"],
+            maxWidth: ["320px", "480px"],
             border: "solid",
           }}
           image={
@@ -97,25 +97,37 @@ function BookCover({ data }: BookCoverProps) {
               fontWeight: "bold",
               letterSpacing: "1.5px",
               paddingTop: 2,
-              paddingBottom: 3,
+              paddingBottom: 2,
               marginY: 0,
               fontSize: 4,
             }}
           >
             {bookCover.frontmatter.title}
           </h2>
-          <p
+          <section
+            dangerouslySetInnerHTML={{ __html: bookCover.html }}
             sx={{
+              h2: {
+                textTransform: "uppercase",
+                fontStyle: "italic",
+                fontWeight: "bold",
+                letterSpacing: "1.5px",
+                padding: 0,
+                marginY: 0,
+                fontSize: 4,
+              },
               fontStyle: "italic",
               letterSpacing: "1.5px",
               fontSize: 2,
               lineHeight: "body",
               margin: 0,
+              padding: 0,
               maxWidth: "576px",
+              "+ p": {
+                textIndentation: "2em",
+              },
             }}
-          >
-            {bookCover.frontmatter.description}
-          </p>
+          />
         </div>
       </section>
       <HorizontalRule />

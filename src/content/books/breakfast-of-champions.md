@@ -1,13 +1,5 @@
 ---
 title: Breakfast of Champions
-description: Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-  accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo
-  inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.
-  Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit,
-  sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.
-  Neque porro quisquam est, qui dolorem ipsum quia dolor sit amet, consectetur,
-  adipisci velit, sed quia non numquam eius modi tempora incidunt ut labore et
-  dolore magnam aliquam quaerat voluptatem.
 image:
   src: /images/book-cover-kurt-vonnegut-jop-luberti-1280.jpg
   alt: Cover illustration for Breakfast of Champions by Kurt Vonnegut
@@ -15,3 +7,8 @@ meta:
   ogDescription: Cover illustration for Breakfast of Champions by Kurt Vonnegut
   ogImage: /images/ogimage.jpg
 ---
+There is not much I can say about Vonnegut that hasn't been repeated too often before. There is, however, very much to love abou this work and I hope my appreciation for it shines through in this reimagined cover for Breakfast of Champions (1973).
+
+A Vonnegut book cover must be colorful. A writer who can turn the most existential of crises and horrific happenstance into emphatic pageturners and include hilarity on every one of those pages, combined with mind-opening humanist philosophy, deserves the whole spectrum, really.
+
+In this set-up, the capital B is an initial eyecatcher, whereas the somewhat convoluted letters of the title invite the viewer to lean in and look just a little bit closer. Gotcha!

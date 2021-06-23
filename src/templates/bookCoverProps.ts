@@ -12,6 +12,8 @@ export type BookCoverProps = {
       fields: {
         slug: string
       }
+      html: string
+      rawMarkdownBody: string
       frontmatter: {
         title: string
         description: string

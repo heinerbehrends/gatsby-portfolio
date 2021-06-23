@@ -31,7 +31,6 @@ export default function CoverGrid() {
         edges {
           node {
             frontmatter {
-              description
               title
               image {
                 alt
