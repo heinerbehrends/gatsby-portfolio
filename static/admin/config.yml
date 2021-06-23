@@ -50,6 +50,7 @@ collections:
         fields:
           - label: About
             name: body
+            required: true
             widget: markdown
           - label: Adress
             name: address
