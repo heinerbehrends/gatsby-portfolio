@@ -13,7 +13,7 @@ collections:
     create: true
     fields:
       - { label: Title, name: title, widget: string }
-      - { label: Description, name: description, widget: text }
+      - { label: Description, name: body, widget: markdown }
       - label: Image
         name: image
         widget: object
@@ -46,13 +46,11 @@ collections:
     files:
       - label: "Info"
         name: "info"
-        file: "src/content/info/info-page.yml"
+        file: "src/content/info/info-page.md"
         fields:
           - label: About
-            name: about
-            widget: list
-            allow_add: true
-            field: { label: paragraph, name: paragraph, widget: string }
+            name: body
+            widget: markdown
           - label: Adress
             name: address
             widget: object
