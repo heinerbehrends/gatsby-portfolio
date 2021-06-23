@@ -8,64 +8,71 @@ import CoverGrid from "../components/coverGrid"
 
 export const query = graphql`
   query InfoQuery {
-    infoYaml {
-      address {
-        insta
-        email
-        phone
-        website
+    markdownRemark(fileAbsolutePath: { regex: "/info-page.md/" }) {
+      html
+      frontmatter {
+        address {
+          email
+          insta
+          phone
+          website
+        }
       }
-      about
     }
   }
 `
 type InfoData = {
   data: {
-    infoYaml: {
-      address: {
-        insta: string
-        email: string
-        phone: string
-        website: string
+    markdownRemark: {
+      frontmatter: {
+        address: {
+          insta: string
+          email: string
+          phone: string
+          website: string
+        }
       }
-      about: string[]
+      html: string
     }
   }
 }
 
 export default function Info({ data }: InfoData) {
-  const info = data.infoYaml
+  const info = data.markdownRemark.frontmatter
   return (
     <Layout>
       <section
         sx={{
           maxWidth: "1024px",
-          boxSizing: "border-box",
-          marginX: [3, "auto"],
+          marginX: [3, 3, 3, "auto"],
           marginY: [3],
-          padding: [3, 4],
-          // keeps margin from collapsing
+          paddingX: [3, 4],
+          paddingY: [2, 3],
           fontStyle: "italic",
-          letterSpacing: "1px",
+          letterSpacing: "1.5px",
           fontSize: 1,
-          lineHeight: 1.5,
+          lineHeight: "body",
           border: "solid",
         }}
       >
-        {info.about.map((paragraph, index) => {
-          if (index === 0) {
-            return (
-              <p key={index} sx={{ marginTop: 0 }}>
-                {paragraph}
-              </p>
-            )
-          } else return <p key={index}>{paragraph}</p>
-        })}
+        <div
+          dangerouslySetInnerHTML={{ __html: data.markdownRemark.html }}
+          sx={{
+            p: {
+              textIndent: 0,
+              textTransform: "uppercase",
+              "+ p": {
+                marginTop: 3,
+              },
+            },
+          }}
+        ></div>
 
         <address
           sx={{
             display: "flex",
-            flexDirection: ["column", "column", "column", "row"],
+            flexDirection: ["column", "row", "row", "row"],
+            marginTop: 3,
           }}
         >
           <div sx={{ paddingRight: 4 }}>
