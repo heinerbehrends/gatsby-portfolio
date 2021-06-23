@@ -14,7 +14,7 @@ export default function Footer() {
         sx={{
           maxWidth: "1024px",
           marginX: "auto",
-          paddingLeft: [3, 0],
+          paddingLeft: [4, 4, 4, 0],
           fontSize: 1,
           textTransform: "uppercase",
           letterSpacing: "1px",
@@ -25,7 +25,7 @@ export default function Footer() {
         Address: Martinikerkhof 15 A 9712 JG Groningen, Netherlands <br />
         KVK / Chamber of commerce number: 59959010 <br />
         Built with love by
-        {``}
+        {` `}
         <Themed.a sx={{ paddingY: 0 }} href="https://www.flyfi.nl">
           <em>flyfi</em>
         </Themed.a>{" "}
