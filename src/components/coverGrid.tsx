@@ -27,7 +27,7 @@ type CoverGridData = {
 export default function CoverGrid() {
   const data = useStaticQuery(graphql`
     query CoverGridQuery {
-      allMarkdownRemark {
+      allMarkdownRemark(filter: { fileAbsolutePath: { regex: "/books/" } }) {
         edges {
           node {
             frontmatter {
@@ -55,11 +55,12 @@ export default function CoverGrid() {
     <section
       sx={{
         maxWidth: "1024px",
+        boxSizing: "content-box",
         marginX: "auto",
         paddingY: 3,
         paddingX: 3,
         display: "grid",
-        gridTemplateColumns: ["1fr", "1fr 1fr", "1fr 1fr", "1fr 1fr 1fr"],
+        gridTemplateColumns: ["1fr", "1fr 1fr", "1fr 1fr 1fr", "1fr 1fr 1fr"],
         gap: [3, 3, 4, 5],
         alignItems: "center",
       }}
