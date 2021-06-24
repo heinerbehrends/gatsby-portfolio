@@ -5,10 +5,10 @@ import Seo from "../components/seo"
 
 function IndexPage() {
   return (
-    <Layout>
+    <>
       <Seo title="Easy Tiger Design" />
       <CoverGrid />
-    </Layout>
+    </>
   )
 }
 
