@@ -1,12 +1,12 @@
 import React from "react"
 import CoverGrid from "../components/coverGrid"
 import Layout from "../components/layout"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 
 function IndexPage() {
   return (
     <Layout>
-      <SEO title="Jop Luberti Grafische Vormgeving" />
+      <Seo title="Easy Tiger Design" />
       <CoverGrid />
     </Layout>
   )
