@@ -50,7 +50,6 @@ export const query = graphql`
 
 function BookCover({ data }: BookCoverProps) {
   const { markdownRemark: bookCover } = data
-  console.log(data)
   const metaDescription =
     bookCover.frontmatter?.meta?.ogDescription || bookCover.rawMarkdownBody
   const metaImage = bookCover.frontmatter?.meta?.ogImage
@@ -97,7 +96,7 @@ function BookCover({ data }: BookCoverProps) {
               fontStyle: "italic",
               fontWeight: "bold",
               letterSpacing: "1.5px",
-              paddingTop: 2,
+              paddingTop: 0,
               paddingBottom: 2,
               marginY: 0,
               fontSize: 4,
