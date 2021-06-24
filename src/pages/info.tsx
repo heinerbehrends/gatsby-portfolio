@@ -1,4 +1,5 @@
 /** @jsx jsx */
+/** @jsxFrag React.Fragment */
 import { jsx, Themed } from "theme-ui"
 import Layout from "../components/layout"
 import React from "react"
@@ -40,7 +41,7 @@ type InfoData = {
 export default function Info({ data }: InfoData) {
   const info = data.markdownRemark.frontmatter
   return (
-    <Layout>
+    <>
       <section
         sx={{
           maxWidth: "1024px",
@@ -97,6 +98,6 @@ export default function Info({ data }: InfoData) {
       </section>
       <HorizontalRule />
       <CoverGrid />
-    </Layout>
+    </>
   )
 }

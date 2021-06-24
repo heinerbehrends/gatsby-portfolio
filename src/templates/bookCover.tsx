@@ -6,7 +6,7 @@ import { graphql } from "gatsby"
 import Layout from "../components/layout"
 import { GatsbyImage } from "gatsby-plugin-image"
 import CoverGrid from "../components/coverGrid"
-import SEO from "../components/seo"
+import Seo from "../components/seo"
 import { BookCoverProps } from "./bookCoverProps"
 import HorizontalRule from "../components/horizontalRule"
 
@@ -56,8 +56,8 @@ function BookCover({ data }: BookCoverProps) {
     ? `${data.site.siteMetadata.siteUrl}${bookCover.frontmatter?.meta?.ogImage}`
     : data.site.siteMetadata.image
   return (
-    <Layout>
-      <SEO
+    <>
+      <Seo
         title={bookCover.frontmatter.title}
         description={metaDescription}
         image={metaImage}
@@ -132,7 +132,7 @@ function BookCover({ data }: BookCoverProps) {
       </section>
       <HorizontalRule />
       <CoverGrid />
-    </Layout>
+    </>
   )
 }
 
