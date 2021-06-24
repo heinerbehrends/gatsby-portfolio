@@ -56,6 +56,7 @@ module.exports = {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-transformer-sharp`,
+    `gatsby-plugin-preact`,
     {
       resolve: `gatsby-plugin-layout`,
       options: {
