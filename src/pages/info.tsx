@@ -1,7 +1,6 @@
 /** @jsx jsx */
 /** @jsxFrag React.Fragment */
 import { jsx, Themed } from "theme-ui"
-import Layout from "../components/layout"
 import React from "react"
 import { graphql } from "gatsby"
 import HorizontalRule from "../components/horizontalRule"
@@ -74,6 +73,7 @@ export default function Info({ data }: InfoData) {
             display: "flex",
             flexDirection: ["column", "row", "row", "row"],
             marginTop: 3,
+            marginLeft: -2,
           }}
         >
           <div sx={{ paddingRight: 4 }}>

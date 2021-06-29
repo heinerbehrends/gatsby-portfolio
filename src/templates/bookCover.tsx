@@ -3,7 +3,6 @@
 import { jsx } from "theme-ui"
 import React from "react"
 import { graphql } from "gatsby"
-import Layout from "../components/layout"
 import { GatsbyImage } from "gatsby-plugin-image"
 import CoverGrid from "../components/coverGrid"
 import Seo from "../components/seo"
@@ -11,7 +10,7 @@ import { BookCoverProps } from "./bookCoverProps"
 import HorizontalRule from "../components/horizontalRule"
 
 export const query = graphql`
-  query($id: String!) {
+  query ($id: String!) {
     site {
       siteMetadata {
         siteUrl
@@ -75,20 +74,22 @@ function BookCover({ data }: BookCoverProps) {
           paddingY: [2, 3],
         }}
       >
-        <GatsbyImage
-          sx={{
-            width: "100%",
-            height: "100%",
-            maxHeight: ["320px", "480px"],
-            maxWidth: ["320px", "480px"],
-            border: "solid",
-          }}
-          image={
-            bookCover.frontmatter.image.src.childImageSharp.gatsbyImageData
-          }
-          alt={bookCover.frontmatter.image.alt}
-          loading={"eager"}
-        />
+        <div sx={{}}>
+          <GatsbyImage
+            imgStyle={{ border: "1.5px solid black" }}
+            sx={{
+              width: "100%",
+              height: "100%",
+              maxHeight: ["320px", "480px"],
+              maxWidth: ["320px", "480px"],
+            }}
+            image={
+              bookCover.frontmatter.image.src.childImageSharp.gatsbyImageData
+            }
+            alt={bookCover.frontmatter.image.alt}
+            loading={"eager"}
+          />
+        </div>
         <div sx={{ paddingX: 3 }}>
           <h2
             sx={{
