@@ -21,8 +21,7 @@ export default function InfoLink() {
         marginTop: "20px",
         justifyContent: "center",
         "&:focus": {
-          border: "dashed",
-          outline: "none",
+          outline: "focus",
         },
       }}
       // @ts-ignore

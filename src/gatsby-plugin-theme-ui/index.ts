@@ -34,19 +34,22 @@ const theme: Theme = {
   borders: {
     solid: "1.5px solid black",
     dashed: "1.5px dashed black",
+    focus: "3px dashed #0CAFFF",
   },
   styles: {
     a: {
+      border: "3px solid transparent",
       display: "inline-block",
       fontWeight: "bold",
       textDecoration: "none",
       color: "text",
-      paddingBottom: 2,
-      ":hover": {
+      paddingX: 2,
+      paddingY: 1,
+      "&:hover": {
         textDecoration: "underline",
       },
       "&:focus": {
-        border: "dashed",
+        border: "focus",
         outline: "none",
         textDecoration: "underline",
       },

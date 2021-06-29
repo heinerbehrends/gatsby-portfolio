@@ -23,8 +23,8 @@ export default function CoverGridItem({
         border: "solid",
         padding: 0,
         "&:focus": {
-          border: "dashed",
-          outline: "none",
+          border: "1.5px solid transparent",
+          outline: "3px dashed #0CAFFF",
         },
       }}
     >
