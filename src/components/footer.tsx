@@ -26,8 +26,11 @@ export default function Footer() {
         KVK / Chamber of commerce number: 59959010 <br />
         Built with love by
         {` `}
-        <Themed.a sx={{ paddingY: 0 }} href="https://www.flyfi.nl">
-          <em>flyfi</em>
+        <Themed.a
+          sx={{ paddingY: 0, marginLeft: -2 }}
+          href="https://www.flyfi.nl"
+        >
+          <em>flyfi web development</em>
         </Themed.a>{" "}
       </address>
     </footer>
