@@ -10,11 +10,10 @@ export default function VideoLogo() {
       to={"/"}
       sx={{
         height: ["35px", "50px", "60px"],
-        // padding: 1,
         marginLeft: [3, 3, 3, 0],
         paddingY: 0,
         "&:focus": {
-          outline: "1.5px dashed black",
+          outline: "3px dashed #0CAFFF",
         },
       }}
     >
