@@ -59,7 +59,7 @@ export default function CoverGrid() {
         paddingY: 3,
         paddingX: 3,
         display: "grid",
-        gridTemplateColumns: ["1fr", "1fr 1fr", "1fr 1fr 1fr", "1fr 1fr 1fr"],
+        gridTemplateColumns: "repeat(auto-fill, minmax(240px, 1fr))",
         gap: [3, 3, 4, 5],
         alignItems: "center",
       }}
