@@ -123,7 +123,7 @@ function BookCover({ data }: BookCoverProps) {
               lineHeight: "body",
               margin: 0,
               padding: 0,
-              maxWidth: "576px",
+              maxWidth: "480px",
               "+ p": {
                 textIndentation: "2em",
               },
