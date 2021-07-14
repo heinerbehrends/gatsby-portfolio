@@ -18,9 +18,9 @@ export default function VideoLogo() {
       }}
     >
       <video
+        muted
         autoPlay
         loop
-        muted
         sx={{ padding: "0", height: ["35px", "50px", "60px"] }}
       >
         <source src={logoMp4} type="video/mp4" />
