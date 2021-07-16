@@ -15,6 +15,18 @@ type metaType = {
   }
 }
 
+type SEOProps = {
+  description?: string
+  lang?: string
+  meta?: ConcatArray<
+    | { name: string; content: any; property?: undefined }
+    | { property: string; content: any; name?: undefined }
+  >
+  title: string
+  image?: string
+  slug?: string
+}
+
 function SEO({
   description = "",
   lang = "nl",
@@ -96,18 +108,6 @@ function SEO({
       ].concat(meta)}
     />
   )
-}
-
-type SEOProps = {
-  description?: string
-  lang?: string
-  meta?: ConcatArray<
-    | { name: string; content: any; property?: undefined }
-    | { property: string; content: any; name?: undefined }
-  >
-  title: string
-  image?: string
-  slug?: string
 }
 
 export default SEO
