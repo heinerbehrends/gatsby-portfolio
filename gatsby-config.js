@@ -4,8 +4,8 @@ module.exports = {
     description: `Grafisch ontwerp voor boekomslagen.`,
     author: `Jop Luberti`,
     keywords: `Grafisch ontwerp, boekomslagen, patronen, ontwerp`,
-    siteUrl: `https://goofy-kalam-085d37.netlify.app`,
-    image: `https://goofy-kalam-085d37.netlify.app/images/ogImageHome.jpg`,
+    siteUrl: `https://easy-tiger.netlify.app`,
+    image: `https://easy-tiger.netlify.app/images/ogImageHome.jpg`,
   },
   plugins: [
     {
