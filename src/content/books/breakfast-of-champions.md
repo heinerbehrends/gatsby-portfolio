@@ -10,5 +10,3 @@ meta:
 There is not much I can say about Vonnegut that hasn't been repeated too often before. There is, however, very much to love abou this work and I hope my appreciation for it shines through in this reimagined cover for Breakfast of Champions (1973).
 
 A Vonnegut book cover must be colorful. A writer who can turn the most existential of crises and horrific happenstance into emphatic pageturners and include hilarity on every one of those pages, combined with mind-opening humanist philosophy, deserves the whole spectrum, really.
-
-In this set-up, the capital B is an initial eyecatcher, whereas the somewhat convoluted letters of the title invite the viewer to lean in and look just a little bit closer. Gotcha!
