@@ -1,12 +1,12 @@
 ---
-title: Breakfast of Champions
+title: Liquid Sunset mural
 image:
-  src: /images/book-cover-kurt-vonnegut-jop-luberti-1280.jpg
+  src: /images/muren-klein.jpg
   alt: Cover illustration for Breakfast of Champions by Kurt Vonnegut
 meta:
   ogDescription: Cover illustration for Breakfast of Champions by Kurt Vonnegut
   ogImage: /images/ogimage.jpg
 ---
-There is not much I can say about Vonnegut that hasn't been repeated too often before. There is, however, very much to love abou this work and I hope my appreciation for it shines through in this reimagined cover for Breakfast of Champions (1973).
+Waves, sunset clouds, sea and beach vibes. This is a mural I did for the entrance hall to an apartment building in Groningen. Based on talks with the inhabitants, I designed this pattern and colour combination. I wanted people to feel comfy, relaxed and cheerful when entering their apartment building.
 
-A Vonnegut book cover must be colorful. A writer who can turn the most existential of crises and horrific happenstance into emphatic pageturners and include hilarity on every one of those pages, combined with mind-opening humanist philosophy, deserves the whole spectrum, really.
+January 2023
